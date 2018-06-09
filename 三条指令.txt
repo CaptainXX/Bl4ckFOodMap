@@ -1,3 +1,7 @@
+git pull
 git add
 git commit -am "更新的内容"
 git push 
+
+
+git status          作用：查看已更改的文件
