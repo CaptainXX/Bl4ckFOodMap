@@ -1,7 +1,7 @@
-git pull
+ï»¿git pull
 git add
-git commit -am "¸üĞÂµÄÄÚÈİ"
+git commit -am "æ›´æ–°çš„å†…å®¹"
 git push 
 
 
-git status          ×÷ÓÃ£º²é¿´ÒÑ¸ü¸ÄµÄÎÄ¼ş
+git status          ä½œç”¨ï¼šæŸ¥çœ‹å·²æ›´æ”¹çš„æ–‡ä»¶
