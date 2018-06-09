@@ -10,7 +10,11 @@
 <body>
     <form id="form1" runat="server">
         <div>
+<<<<<<< HEAD
             helloworld
+=======
+        hi
+>>>>>>> a58c6a38044c419309e8ba4c5acedb0402ecb709
         </div>
     </form>
 </body>
