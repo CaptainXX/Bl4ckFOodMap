@@ -3,15 +3,40 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<link href="css/style.css" rel="stylesheet" />
+    <style>
+        body {
+            background-image: url(bread_3.0.jpg);
+            background-position:right;
+            background-repeat:repeat-y;
+        }
+    </style>
+ 
+<head runat="server"> 
+    
+   
+   
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
-            helloworld
-        </div>
-    </form>
-</body>
+    <div id="headblock">
+
+    </div>
+    <div id="guideblock">
+
+    </div>
+     <div id="mainblock">
+         <div id ="leftblock">
+
+         </div>
+         <div id="rightblock">
+
+         </div>
+         
+    </div>
+    <div id="bottomblock">
+
+         </div>
+    </body>
 </html>
