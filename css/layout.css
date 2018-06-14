@@ -1,2 +1,48 @@
 ﻿body {
 }
+
+/* 在这里写布局控制 */
+
+#headblock {
+    height: 200px;
+    vertical-align: middle;
+    width: 1100px;
+    margin: auto;
+}
+
+#guideblock {
+    margin: auto;
+    height: 50px;
+    width: 1100px;
+    margin-top: 5px;
+    vertical-align: middle;
+}
+
+#mainblock {
+    margin: auto;
+    margin-top: 5px;
+    padding-top: 0px;
+    height: 1000px;
+    width: 1100px;
+    vertical-align: middle;
+}
+
+#leftblock {
+    float: left;
+    width: 180px;
+    height: 1000px;
+}
+
+#rightblock {
+    height: 1000px;
+    width: 900px;
+    float: right;
+}
+
+#bottomblock {
+    width: 1095px;
+    height: 50px;
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+}

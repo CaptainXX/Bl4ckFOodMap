@@ -1,167 +1,40 @@
 ﻿body {
 }
-/* 初始化全部样式 */
-html {
-    background: none repeat scroll 0 0 #FFFFFF;
-    color: #000000;
-}
 
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
-    margin: 0;
-    padding: 0;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-fieldset, img {
-    border: 0 none;
-}
-
-address, caption, cite, code, dfn, em, strong, th, var {
-    font-style: normal;
-    font-weight: normal;
-}
-
-li {
-    list-style: none outside none;
-}
-
-caption, th {
-    text-align: left;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-size: 100%;
-    font-weight: normal;
-}
-
-q:before, q:after {
-    content: "";
-}
-
-abbr, acronym {
-    border: 0 none;
-    font-variant: normal;
-}
-
-sup {
-    vertical-align: text-top;
-}
-
-sub {
-    vertical-align: text-bottom;
-}
-
-input, textarea, select {
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-}
-
-input, textarea, select {
-}
-
-legend {
-    color: #000000;
-}
-
-body {
-    font: 13px/1.231 arial,helvetica,clean,sans-serif;
-}
-
-select, input, button, textarea {
-    font: 99% arial,helvetica,clean,sans-serif;
-}
-
-table {
-    font-size: inherit;
-}
-
-pre, code, kbd, samp, tt {
-    font-family: monospace;
-    line-height: 100%;
-}
-
-a {
-    text-decoration: none;
-}
-
-    a:hover, a:focus {
-        text-decoration: underline;
-    }
-
-strong {
-    font-weight: bold;
-}
-
-input[type="submit"] {
-    cursor: pointer;
-}
-
-button {
-    cursor: pointer;
-}
+/* 在这里写样式控制 */
 
 #headblock {
-    height: 200px;
-    
-    vertical-align:middle;
-    width:1100px;
-    color:#366;
-    margin:auto;
-    border-style:dashed;
-    border-color:#687A8F;
-     background-color:#FFF;
+    color: #366;
+    border-style: dashed;
+    border-color: #687A8F;
+    background-color: #FFF;
 }
 
-#guideblock { margin:auto;
-    height:50px;
-    width:1100px;
-   margin-top:5px;
-    vertical-align:middle;
-   border-style:dashed;
-    border-color:#F7882F;
-     background-color:#FFF;
+#guideblock {
+    border-style: dashed;
+    border-color: #F7882F;
+    background-color: #FFF;
 }
 
-#mainblock {margin:auto;
-             margin-top:5px;
-    
-    padding-top:0px;
-    height:1000px;
-    width:1100px;
-     background-color:#FFF;
-    vertical-align:middle;
-
+#mainblock {
+    background-color: #FFF;
 }
 
-#leftblock { float:left;
-
-     background-color:#FFF;
-    width:180px;
-    height:1000px;
-   border-style:dashed;
-    border-color:#77C331;
+#leftblock {
+    background-color: #FFF;
+    border-style: dashed;
+    border-color: #77C331;
 }
 
-#rightblock {height:1000px;
-     background-color:#FFF;
-    width:900px;
-    float:right;
-   border-style:dashed;
-    border-color:#77C331;
-    
-    font-size:30px;
+#rightblock {
+    background-color: #FFF;
+    border-style: dashed;
+    border-color: #77C331;
+    font-size: 30px;
 }
-#bottomblock {  width:1095px;
-	       height:50px;
-	        background-color:#FFF;
-	        margin:auto;
-             margin-top:10px;
-	        text-align: center;
-            border-style:dashed;
-            border-color:#DCC7AA;
+
+#bottomblock {
+    background-color: #FFF;
+    border-style: dashed;
+    border-color: #DCC7AA;
 }

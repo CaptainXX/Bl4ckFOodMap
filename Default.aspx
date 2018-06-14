@@ -3,40 +3,41 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<link href="css/style.css" rel="stylesheet" />
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>秘食</title>
+    
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/layout.css" rel="stylesheet" />
+    <link href="css/init.css" rel="stylesheet" />
+    
     <style>
         body {
             background-image: url(bread_3.0.jpg);
             background-position:right;
             background-repeat:repeat-y;
         }
-    </style>
- 
-<head runat="server"> 
+    </style> 
     
-   
-   
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
 </head>
 <body>
     <div id="headblock">
-
+        
     </div>
     <div id="guideblock">
-
+        
     </div>
      <div id="mainblock">
          <div id ="leftblock">
-
+             
          </div>
          <div id="rightblock">
-
+             
          </div>
          
     </div>
     <div id="bottomblock">
-
-         </div>
-    </body>
+        
+    </div>
+</body>
 </html>
