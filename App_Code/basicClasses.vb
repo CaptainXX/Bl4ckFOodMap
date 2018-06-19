@@ -1,5 +1,7 @@
 ﻿Imports Microsoft.VisualBasic
 Imports System.IO
+Imports MySql.Data.MySqlClient
+
 
 Public Class basicClasses
 
@@ -39,6 +41,35 @@ Public Class basicClasses
             RS += Myrandstr()
         Next
         Return RS
+    End Function
+
+    Shared Function DatabaseConnect(ByVal UserId As String, ByVal Passwd As String, ByVal DatabaseId As String) As MySqlConnection ' 连接数据库，执行语句,返回 MySqlConnection 类
+        Dim constr As String = "server=127.0.0.1;userid=" + UserId + ";password=" + Passwd + ";database=" + DatabaseId + ";pooling=false"
+        Dim myConn = New MySqlConnection(constr)
+        Try
+            myConn.Open()
+            Return myConn
+        Catch ex As Exception
+            System.Diagnostics.Debug.WriteLine(ex.Message + "数据库连接失败!")
+            Return Nothing
+        End Try
+
+    End Function
+
+    Shared Function QueryExecute(ByVal Conn As MySqlConnection, ByVal Query As String) As MySqlDataReader ' 执行 Query字符串传入的查询指令，返回 DataReader
+        Dim SQLQuery As String = Query
+
+        Try
+
+
+            Dim comm = New MySqlCommand(SQLQuery, Conn)
+            Dim dr As MySqlDataReader = comm.ExecuteReader()
+
+            Return dr
+        Catch ex As Exception
+            System.Diagnostics.Debug.WriteLine(ex.Message + "查询执行失败!")
+            Return Nothing
+        End Try
     End Function
 
 End Class
