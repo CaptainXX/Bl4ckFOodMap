@@ -25,12 +25,12 @@
             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="请输入有效邮箱" ControlToValidate="inputEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"></asp:RegularExpressionValidator>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="请输入邮箱地址" ControlToValidate="inputEmail" EnableClientScript="True" Display="Dynamic"></asp:RequiredFieldValidator>
             <!-- type="password"-->
-            <asp:TextBox class="form-control pwd-style" placeholder="密码" id="inputPassword" runat="server"/>
+            <asp:TextBox class="form-control pwd-style" placeholder="密码" id="inputPassword" runat="server" TextMode="Password" />
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="请输入密码" Display="Dynamic" ControlToValidate="inputPassword"></asp:RequiredFieldValidator>
             <asp:TextBox class="form-control" placeholder="验证码" id="inputVFCode" runat="server"/>
             
             <label>验证码：</label>
-            <asp:Button ID="VFCode" class="btn" runat="server" Text="" />
+            <asp:Button ID="VFCode" class="btn" runat="server" Text="" CausesValidation="False" />
             <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="inputVFCode" Display="Dynamic" ErrorMessage="验证码错误" CultureInvariantValues="True"></asp:CompareValidator>
             <div class="checkbox">
                 <label>

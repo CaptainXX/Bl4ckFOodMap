@@ -57,13 +57,15 @@
                         <asp:TextBox ID="inputVFCode" runat="server" CssClass="form-control"></asp:TextBox>
                     </td>
                     <td>
-                        <asp:Button ID="VFCode" class="btn" runat="server" Text="" />
+                        <asp:Button ID="VFCode" runat="server" Text="获取验证码" CssClass="btn" UseSubmitBehavior="False" />
                         <asp:CompareValidator ID="VFCValidator1" runat="server" ErrorMessage="验证码错误" ControlToValidate="inputVFCode" Display="Dynamic"></asp:CompareValidator>
+                        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                        <asp:Timer ID="Timer1" runat="server" Enabled="False"></asp:Timer>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="confirm" class="btn btn-lg btn-primary btn-block" type="submit" runat="server" Text="确认"/>
+                        <asp:Button ID="confirm" class="btn btn-lg btn-primary btn-block" type="submit" runat="server" Text="确认" style="margin:10px;"/>
                     </td>
                 </tr>
             </table>
