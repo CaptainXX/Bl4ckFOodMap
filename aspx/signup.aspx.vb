@@ -13,15 +13,40 @@ Partial Class aspx_signup
     End Sub
 
     Protected Sub VFCode_Click(sender As Object, e As EventArgs) Handles VFCode.Click
-        Dim Message As String = UCase(MyRandString(6))
+        Dim Message As String = UCase(MyRandString(6)) ' 生成6位验证码
         Dim smtpServer As String = "smtp.qq.com"
         Dim mailId As String = "" ' push 前删除
         Dim mailAuthor As String = "" ' push 前删除
         Dim mailClient = New SmtpClient
         Dim mailTarget As String = email.Text
 
+        '检查邮箱是否已被注册
+        Dim id As String = "root"
+        Dim pwd As String = "" ' push 前删除
+        Dim dbid As String = "mishi"
+        Dim useremail As String = ""
 
-        VFCValidator1.ValueToCompare = Message
+        Dim conn As MySqlConnection = DatabaseConnect(id, pwd, dbid)
+
+        Dim qstr As String = "select user_email from user;"
+
+        Dim dr As MySqlDataReader = QueryExecute(conn, qstr)
+        Try
+            While (dr.Read())
+                useremail = dr.GetString("user_email")
+                If email.Text = useremail Then
+                    MsgBox("用户已存在")
+                    conn.Close()
+                    Return
+                End If
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        conn.Close()
+
+        ' 发送邮件
+        VFCValidator1.ValueToCompare = Message ' 设置比较验证器的值为发送出的验证码
 
         mailClient.EnableSsl = True
         mailClient.UseDefaultCredentials = False
