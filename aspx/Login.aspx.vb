@@ -25,10 +25,11 @@ Partial Class aspx_Login
         Dim useremail As String = ""
         Dim username As String = ""
         Dim userpwd As String = ""
+        Dim userid As Integer = -1
 
         Dim conn As MySqlConnection = DatabaseConnect(id, pwd, dbid)
 
-        Dim qstr As String = "select user_email, user_name, user_pwd from user;"
+        Dim qstr As String = "select user_id, user_email, user_name, user_pwd from user;"
 
         Dim dr As MySqlDataReader = QueryExecute(conn, qstr)
         Try
@@ -36,9 +37,11 @@ Partial Class aspx_Login
                 useremail = dr.GetString("user_email")
                 username = dr.GetString("user_name")
                 userpwd = dr.GetString("user_pwd")
+                userid = dr.GetInt16("user_id")
                 If inputEmail.Text = useremail And inputPassword.Text = userpwd Then
                     conn.Close()
                     Session("se_name") = username
+                    Session("se_id") = userid
                     Response.Redirect("../Default.aspx")
                 End If
             End While
