@@ -15,14 +15,14 @@ Partial Class aspx_signup
     Protected Sub VFCode_Click(sender As Object, e As EventArgs) Handles VFCode.Click
         Dim Message As String = UCase(MyRandString(6)) ' 生成6位验证码
         Dim smtpServer As String = "smtp.qq.com"
-        Dim mailId As String = "" ' push 前删除
-        Dim mailAuthor As String = "" ' push 前删除
+        Dim mailId As String = "670909183@qq.com" ' push 前删除
+        Dim mailAuthor As String = "oouaczvytitpbdde" ' push 前删除
         Dim mailClient = New SmtpClient
         Dim mailTarget As String = email.Text
 
         '检查邮箱是否已被注册
         Dim id As String = "root"
-        Dim pwd As String = "" ' push 前删除
+        Dim pwd As String = "!970712Iloveu" ' push 前删除
         Dim dbid As String = "mishi"
         Dim useremail As String = ""
 
@@ -35,13 +35,16 @@ Partial Class aspx_signup
             While (dr.Read())
                 useremail = dr.GetString("user_email")
                 If email.Text = useremail Then
-                    MsgBox("用户已存在")
+                    Dim a = MsgBox("该邮箱已被注册,直接登录？", vbOKCancel) ' 显示选项 确定 | 取消 ，选择确定返回1，选择取消返回2
+                    If a = 1 Then
+                        Response.Redirect("../aspx/Login.aspx")
+                    End If
                     conn.Close()
                     Return
                 End If
             End While
         Catch ex As Exception
-            MsgBox(ex.Message)
+
         End Try
         conn.Close()
 
@@ -82,7 +85,7 @@ Partial Class aspx_signup
 
     Protected Sub confirm_Click(sender As Object, e As EventArgs) Handles confirm.Click
         Dim id As String = "root"
-        Dim pwd As String = "" ' push 前删除
+        Dim pwd As String = "!970712Iloveu" ' push 前删除
         Dim dbid As String = "mishi"
         Dim useremail As String = email.Text
         Dim username As String = name.Text
@@ -92,7 +95,8 @@ Partial Class aspx_signup
 
         Dim qstr As String = "insert into user (user_email, user_name, user_pwd, user_assignment, submission_date) values ('" + useremail + "', '" + username + "', '" + userpwd + "','', NOW());"
 
-        Dim dr As MySqlDataReader = QueryExecute(conn, qstr)
+        QueryExecute(conn, qstr)
+        conn.Close()
 
         Response.Redirect("../aspx/Login.aspx")
 
